@@ -1276,7 +1276,7 @@ label {
 
   
 .hero-banner {
-    height: 1300px;
+    height: 1500px;
     background-size: cover;
     background-position: top left;
 }
@@ -1285,7 +1285,7 @@ label {
     padding: 0 50px;
     width: 100%;
     align-items: center;
-    margin-top: 80px;
+    margin-top: 280px;
 }
 
 .wrapper::before{
@@ -1309,7 +1309,7 @@ label {
 }
 @keyframes object2{
     50%{
-        left: 25%;
+        left: 50%;
         top: 27%;
     }
 }
@@ -1317,7 +1317,7 @@ label {
 
 
 .cols0{
-    width: 11100px;
+    width: 100%;
     height: 500px;
     display: flex;
     flex-direction: column;
@@ -1419,7 +1419,7 @@ label{
     align-items: start;
 }
 .focus-box .focus-img img{
-    width: 150px;
+    width: 110px;
     margin: 0;
 }
 .focus-box .focus-heading h1{
@@ -1442,12 +1442,12 @@ label{
 }
 
 .about-img1{
-    height: 550px;
+    height: 750px;
 }
 
 .about-img2{
-    width: 75%;
-    height: 500px;
+    width: 100%;
+    height: 700px;
 }
 
 .about-heading-box{
