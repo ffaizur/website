@@ -1264,7 +1264,7 @@ label {
 
 
   .nav-msg{
-    height: 100px;
+    height: 120px;
   }
   .nav-container{
     height: 200px;
@@ -1276,7 +1276,7 @@ label {
 
   
 .hero-banner {
-    height: 1000px;
+    height: 1300px;
     background-size: cover;
     background-position: top left;
 }
@@ -1285,7 +1285,7 @@ label {
     padding: 0 50px;
     width: 100%;
     align-items: center;
-    padding-bottom: 70px;
+    margin-top: 80px;
 }
 
 .wrapper::before{
