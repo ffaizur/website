@@ -1,0 +1,92 @@
+/* WhatsApp Icon Style */
+.whatsapp-float {
+    position: fixed;
+    width: 43px;
+    height: 43px;
+    bottom: 40px;
+    right: 70px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000000;
+    transition: transform 0.3s ease-in-out;
+    animation: slide-in 0.8s ease-out; /* Initial slide-in animation */
+
+    &:hover{
+        background-color: #00ff5e;
+    }
+}
+
+/* Radiating Effect Behind WhatsApp Icon */
+.whatsapp-float::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    background-color: #25D366; /* Radiating color */
+    transform: translate(-50%, -50%) scale(0);
+    z-index: -1; /* Behind the button */
+    opacity: 0.7;
+    animation: radiate 2s infinite ease-out; /* Radiating pulse animation */
+}
+
+/* WhatsApp Icon Size */
+.whatsapp-icon {
+    width: 25px;
+    height: 25px;
+}
+
+/* Slide-in Animation */
+@keyframes slide-in {
+    0% {
+        transform: translateY(100px); /* Start outside screen (right) */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* Final position */
+        opacity: 1;
+    }
+}
+
+/* Radiate Animation */
+@keyframes radiate {
+    0% {
+        transform: translate(-50%, -50%) scale(0.7);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(3);
+        opacity: 0;
+    }
+}
+
+/* Hover Effect */
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+
+
+@media(max-width: 600px){
+    .whatsapp-float {
+        width: 100px;
+        height: 100px;
+        right: 20px;
+        bottom: 170px;
+
+    }
+    .whatsapp-icon {
+        width: 65px;
+        height: 65px;
+    }
+}

@@ -1,0 +1,74 @@
+
+.top-btn .fa-solid {
+    font-size: 20px;
+}
+
+
+/* Scroll to Top Button Style */
+#scrollTopBtn {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 40px;
+    right: 20px;
+    padding: 11px 13px;
+    background-color: #7f00ff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none; /* Initially hidden */
+    z-index: 1000000;
+    transition: transform 0.3s ease, bottom 0.5s ease, opacity 0.5s ease; /* Smooth transition for movement */
+}
+
+/* Adding the radiating effect using a pseudo-element */
+#scrollTopBtn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    background-color: #7f00ff;
+    transform: translate(-50%, -50%) scale(0);
+    z-index: -1; /* Behind the button */
+    opacity: 0.7;
+    animation: radiate 2s infinite ease-out; /* Animation for radiating effect */
+}
+
+/* Radiating animation */
+@keyframes radiate {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(3); /* Expands outward */
+        opacity: 0;
+    }
+}
+
+/* Button Hover Effect */
+#scrollTopBtn:hover {
+    background-color: #7f00ff;
+    box-shadow: 0 0 30px #7f00ff;
+}
+
+
+
+
+
+
+@media(max-width: 600px){
+    #scrollTopBtn{
+        padding: 30px 35px;
+        /* margin: 75px; */
+    }
+
+    .top-btn .fa-solid{
+        font-size: 40px;
+    }
+}
