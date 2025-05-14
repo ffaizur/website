@@ -971,6 +971,9 @@
                 width: 70%;
                 height: auto;
             }
+            .hero-content{
+                margin-top: 50px;
+            }
         }
         
         @media (max-width: 576px) {
