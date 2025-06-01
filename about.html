@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Faizur Rahman | Web Developer & Designer</title>
+    <meta name="description" content="Detailed information about Faizur Rahman, Web Developer with MCA degree and industry experience">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="Images/Logo-2.png" type="image/x-icon">
+    
+    <!-- Fonts & Icons -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+:root {
+    --primary-color: #0779d6;
+    --secondary-color: #4ce4fb;
+    --accent-color: #e67e22;
+    --light-color: #f5f6fa;
+    --dark-color: #2f3640;        
+    --text-color: #2d3436;         
+    --text-light: #636e72;         
+    --success-color: #27ae60;      
+    --error-color: #e74c3c;        
+    --transition: all 0.3s ease;
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); 
+    --border-radius: 8px;
+}
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: #f9f9f9;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        /* Header & Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+        
+        .header.scrolled {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .left-section {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 60px;
+            transition: var(--transition);
+        }
+        
+        #menu-bar {
+            font-size: 1.5rem;
+            margin-right: 1.5rem;
+            cursor: pointer;
+            display: none;
+        }
+        
+        .menu ul {
+            display: flex;
+        }
+        
+        .menu ul li {
+            margin-left: 2rem;
+            position: relative;
+        }
+        
+        .menu ul li a {
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+        }
+        
+        .menu ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .menu ul li a span {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .menu ul li::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .menu ul li:hover::after {
+            width: 100%;
+        }
+        
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100%;
+            background-color: white;
+            z-index: 1001;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            overflow-y: auto;
+        }
+        
+        .sidebar.open {
+            right: 0;
+        }
+        
+        .sidebar-content {
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .sidebar-content i {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+        
+        .sidebar-content ul li {
+            margin-bottom: 1.5rem;
+        }
+        
+        .sidebar-content ul li a {
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .sidebar-content ul li a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+        
+        .sidebar-content ul li a span {
+            color: var(--primary-color);
+        }
+        
+        /* Hero Section - About Page */
+        .about-hero {
+            margin-top: 100px;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), 
+                        url('Images/banner1.jpg') center/cover no-repeat;
+            color: white;
+            padding: 0 5%;
+        }
+        
+        .about-hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeIn 1s ease;
+        }
+        
+        .about-hero-content p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeIn 1.5s ease;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.5rem;
+            animation: fadeIn 2s ease;
+        }
+        
+        .breadcrumb a {
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .breadcrumb span {
+            margin: 0 10px;
+        }
+        
+        /* About Details Section */
+        .about-details {
+            padding: 5rem 5%;
+            background-color: white;
+        }
+        
+        .about-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h1 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-img-box {
+            position: relative;
+            height: 500px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .about-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            transition: var(--transition);
+        }
+        
+        .about-img-box:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-text h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-color);
+        }
+        
+        .about-text h2 span {
+            color: var(--primary-color);
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+        
+        .signature {
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .signature img {
+            height: 60px;
+            margin-right: 1rem;
+        }
+        
+        .signature-text h4 {
+            font-size: 1.2rem;
+            color: var(--dark-color);
+        }
+        
+        .signature-text p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            padding: 5rem 5%;
+            background-color: var(--light-color);
+        }
+        
+        .stats-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .stat-box {
+            background-color: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .stat-box:hover {
+            transform: translateY(-10px);
+        }
+        
+        .stat-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(7, 121, 214, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: var(--primary-color);
+            font-size: 1.8rem;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-title {
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+        
+        /* Timeline Section */
+        .timeline-section {
+            padding: 5rem 5%;
+            background-color: white;
+        }
+        
+        .timeline-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background-color: var(--primary-color);
+        }
+        
+        .timeline-item {
+            padding: 1.5rem;
+            position: relative;
+            width: 50%;
+            margin-bottom: 3rem;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            padding-right: 3rem;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 3rem;
+        }
+        
+        .timeline-content {
+            background-color: var(--light-color);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            position: relative;
+        }
+        
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            width: 20px;
+            height: 20px;
+            background-color: var(--light-color);
+            transform: rotate(45deg);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -10px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -10px;
+        }
+        
+        .timeline-date {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .timeline-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
+        .timeline-text {
+            color: var(--text-light);
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            top: 30px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--primary-color);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -10px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -10px;
+        }
+        
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 5rem 5%;
+            background-color: var(--light-color);
+        }
+        
+        .testimonials-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '\201C';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            color: rgba(7, 121, 214, 0.1);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        
+        .testimonial-text {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 1rem;
+        }
+        
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-size: 1.1rem;
+            color: var(--dark-color);
+            margin-bottom: 0.3rem;
+        }
+        
+        .author-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .rating {
+            color: #f1c40f;
+            margin-top: 0.3rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 5%;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            text-align: center;
+            color: white;
+        }
+        
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-container h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-container p {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            padding: 0.8rem 2.5rem;
+            background-color: white;
+            color: var(--primary-color);
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 2rem 5%;
+            text-align: center;
+        }
+        
+        .footer p {
+            margin-bottom: 1rem;
+        }
+        
+        .footer a {
+            color: var(--primary-color);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Floating Buttons */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            transition: var(--transition);
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+        
+        .whatsapp-icon {
+            width: 30px;
+            height: 30px;
+        }
+        
+        .scrollTopBtn {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+        
+        .scrollTopBtn.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scrollTopBtn:hover {
+            background-color: var(--dark-color);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideInLeft {
+            from { 
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-hero-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            .timeline-container::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 0;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-dot,
+            .timeline-item:nth-child(even) .timeline-dot {
+                left: 20px;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content::before,
+            .timeline-item:nth-child(even) .timeline-content::before {
+                left: 60px;
+                right: auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            #menu-bar {
+                display: block;
+            }
+            
+            .menu {
+                display: none;
+            }
+            
+            .about-hero {
+                height: 50vh;
+                margin-top: 100px;
+            }
+            
+            .about-hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-img-box {
+                height: 400px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .about-hero {
+                height: 40vh;
+            }
+            
+            .about-hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .about-hero-content p {
+                font-size: 1rem;
+            }
+            
+            .section-title h1 {
+                font-size: 2rem;
+            }
+            
+            .cta-container h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header" id="header">
+        <div class="nav-container">
+            <div class="left-section">
+                <i id="menu-bar" class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+                <div class="logo">
+                    <a href="index.html"><img src="Images/Logo-2.png" alt="Faizur Rahman Logo"></a>
+                </div>
+            </div>
+            <nav class="menu" id="menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html"><span>About</span></a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact-us.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-content">
+            <i class="fa-solid fa-times" onclick="toggleMenu()"></i>
+            <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html"><span>About</span></a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact-us.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="about-hero-content" data-aos="fade-up">
+            <h1>About Me</h1>
+            <p>Get to know the person behind the code and designs</p>
+            <div class="breadcrumb" data-aos="fade-up" data-aos-delay="300">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <a href="about.html">About</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Details Section -->
+    <section class="about-details">
+        <div class="about-container">
+            <div class="about-grid">
+                <div class="about-img-box" data-aos="fade-right">
+                    <img src="Images/faiz.png" alt="Faizur Rahman">
+                </div>
+                <div class="about-text" data-aos="fade-left">
+                    <h2>Hi, I'm <span>Faizur Rahman</span></h2>
+                    <p>I'm a passionate Web Developer with an MCA degree from Maharishi University of Information Technology, Lucknow, where I graduated with a 72%. My journey in web development began during my academic years, and I've been dedicated to building dynamic, responsive, and user-friendly websites ever since.</p>
+                    <p>In March 2024, I completed a 45-day internship at Sahind Technology, Lucknow, which enhanced my skills and gave me valuable industry exposure. Currently, I'm working as a Web Developer at Innoric Infosystems, Gorakhpur, where I collaborate with teams to deliver high-quality web solutions.</p>
+                    <p>My approach combines technical expertise with creative problem-solving to deliver websites that not only look great but also perform exceptionally well across all devices.</p>
+                    
+                    <div class="signature">
+                        <div class="signature-text">
+                            <h4>Faizur Rahman</h4>
+                            <p>Web Developer & Designer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="about-container">
+            <div class="section-title" data-aos="fade-up">
+                <h1>My Stats</h1>
+            </div>
+            
+            <div class="stats-container">
+                <div class="stat-box" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="stat-number" id="projects-count">0</div>
+                    <div class="stat-title">Projects Completed</div>
+                </div>
+                
+                <div class="stat-box" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-number" id="experience-count">0</div>
+                    <div class="stat-title">Years Experience</div>
+                </div>
+                
+                <div class="stat-box" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number" id="clients-count">0</div>
+                    <div class="stat-title">Happy Clients</div>
+                </div>
+                
+                <div class="stat-box" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="stat-number" id="certificates-count">0</div>
+                    <div class="stat-title">Certificates</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+        <div class="about-container">
+            <div class="section-title" data-aos="fade-up">
+                <h1>My Journey</h1>
+            </div>
+            
+            <div class="timeline-container">
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">July 2024 - Present</div>
+                        <h3 class="timeline-title">Web Developer at Innoric Infosystems</h3>
+                        <p class="timeline-text">Currently working on developing responsive websites and web applications using modern technologies. Collaborating with teams to deliver high-quality solutions for clients.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">March 2024</div>
+                        <h3 class="timeline-title">Internship at Sahind Technology</h3>
+                        <p class="timeline-text">Completed a 45-day intensive internship where I worked on real-world projects, enhanced my technical skills, and gained valuable industry experience in web development.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022 - 2024</div>
+                        <h3 class="timeline-title">MCA from MUIT Lucknow</h3>
+                        <p class="timeline-text">Graduated with a Master's in Computer Applications with 72% marks. Specialized in web technologies and software development during my coursework.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2019 - 2022</div>
+                        <h3 class="timeline-title">BSc from Swami Vivekanand Subharti University</h3>
+                        <p class="timeline-text">Completed my BSc in Mathematics from Swami Vivekanand Subharti University, where I developed strong analytical and problem-solving skills.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2017 - 2018</div>
+                        <h3 class="timeline-title">Intermediate From Government Inter College Deoria</h3>
+                        <p class="timeline-text">Completed my Intermediate from GIC Deoria, where I built a strong academic foundation and developed a disciplined approach to learning.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="about-container">
+            <div class="section-title" data-aos="fade-up">
+                <h1>What Clients Say</h1>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <p class="testimonial-text">Faizur delivered our company website ahead of schedule and exceeded our expectations. His attention to detail and responsiveness made the entire process smooth.</p>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="Images/client.png" alt="Client">
+                        </div>
+                        <div class="author-info">
+                            <h4>Abdulelah A. Al Hijab</h4>
+                            <p>General Manager, Eastern Zone</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <p class="testimonial-text">Working with Faizur on our school website was a pleasure. He understood our requirements perfectly and created a user-friendly site that serves our students and parents effectively.</p>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="Images/client.png" alt="Client">
+                        </div>
+                        <div class="author-info">
+                            <h4>Mohammad Faiyaz Alam</h4>
+                            <p>Manager, Maulana Azad School</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                    <p class="testimonial-text">Faizur's technical skills and creative approach helped us establish a strong online presence. Our construction business has seen increased inquiries since the new website launched.</p>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="Images/client.png" alt="Client">
+                        </div>
+                        <div class="author-info">
+                            <h4>Anshu Singh</h4>
+                            <p>Director, Royera Infra</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" data-aos="fade-up">
+        <div class="cta-container">
+            <h2>Have a project in mind?</h2>
+            <p>I'm available for freelance work. Let's discuss how I can help bring your ideas to life with a beautiful, functional website.</p>
+            <a href="contact-us.html" class="cta-btn">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 - Faizur Rahman | All Rights Reserved</p>
+        <p>Developed with <i class="fas fa-heart" style="color: #e74c3c;"></i> by <a href="#">Faizur Rahman</a></p>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <a href="https://wa.me/7379906479" target="_blank" class="whatsapp-float">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+    </a>
+    
+    <button id="scrollTopBtn" class="scrollTopBtn">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('open');
+        }
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.sidebar-content ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('sidebar').classList.remove('open');
+            });
+        });
+        
+        // Scroll to Top Button
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('active');
+                document.getElementById('header').classList.add('scrolled');
+            } else {
+                scrollTopBtn.classList.remove('active');
+                document.getElementById('header').classList.remove('scrolled');
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Animated counter for stats
+       function animateCounters() {
+    const projectsCount = document.getElementById('projects-count');
+    const experienceCount = document.getElementById('experience-count');
+    const clientsCount = document.getElementById('clients-count');
+    const certificatesCount = document.getElementById('certificates-count');
+    
+    const targetProjects = 10;
+    const targetExperience = 0.9;
+    const targetClients = 8;
+    const targetCertificates = 5;
+    
+    let currentProjects = 0;
+    let currentExperience = 0;
+    let currentClients = 0;
+    let currentCertificates = 0;
+    
+    const speed = 200; // Lower is faster
+    
+    const projectsInterval = setInterval(() => {
+        currentProjects++;
+        projectsCount.textContent = currentProjects + '+';
+        if (currentProjects >= targetProjects) clearInterval(projectsInterval);
+    }, speed);
+    
+    const experienceInterval = setInterval(() => {
+        currentExperience += 0.1;
+        experienceCount.textContent = currentExperience.toFixed(1) + '+';
+        if (currentExperience >= targetExperience) clearInterval(experienceInterval);
+    }, speed);
+    
+    const clientsInterval = setInterval(() => {
+        currentClients++;
+        clientsCount.textContent = currentClients + '+';
+        if (currentClients >= targetClients) clearInterval(clientsInterval);
+    }, speed);
+    
+    const certificatesInterval = setInterval(() => {
+        currentCertificates++;
+        certificatesCount.textContent = currentCertificates + '+';
+        if (currentCertificates >= targetCertificates) clearInterval(certificatesInterval);
+    }, speed);
+}
+
+        
+        // Intersection Observer for stats animation
+        const statsSection = document.querySelector('.stats-section');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        observer.observe(statsSection);
+    </script>
+</body>
+</html>

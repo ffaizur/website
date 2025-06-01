@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills | Faizur Rahman - Web Developer & Designer</title>
+    <meta name="description" content="Technical skills and expertise of Faizur Rahman, Web Developer with MCA degree and industry experience">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="Images/Logo-2.png" type="image/x-icon">
+    
+    <!-- Fonts & Icons -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+:root {
+    --primary-color: #0779d6;
+    --secondary-color: #4ce4fb;
+    --accent-color: #e67e22;
+    --light-color: #f5f6fa;
+    --dark-color: #2f3640;        
+    --text-color: #2d3436;         
+    --text-light: #636e72;         
+    --success-color: #27ae60;      
+    --error-color: #e74c3c;        
+    --transition: all 0.3s ease;
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); 
+    --border-radius: 8px;
+}
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: #f9f9f9;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        /* Header & Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+        
+        .header.scrolled {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .left-section {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 60px;
+            transition: var(--transition);
+        }
+        
+        #menu-bar {
+            font-size: 1.5rem;
+            margin-right: 1.5rem;
+            cursor: pointer;
+            display: none;
+        }
+        
+        .menu ul {
+            display: flex;
+        }
+        
+        .menu ul li {
+            margin-left: 2rem;
+            position: relative;
+        }
+        
+        .menu ul li a {
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+        }
+        
+        .menu ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .menu ul li a span {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .menu ul li::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .menu ul li:hover::after {
+            width: 100%;
+        }
+        
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100%;
+            background-color: white;
+            z-index: 1001;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            overflow-y: auto;
+        }
+        
+        .sidebar.open {
+            right: 0;
+        }
+        
+        .sidebar-content {
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .sidebar-content i {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+        
+        .sidebar-content ul li {
+            margin-bottom: 1.5rem;
+        }
+        
+        .sidebar-content ul li a {
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .sidebar-content ul li a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+        
+        .sidebar-content ul li a span {
+            color: var(--primary-color);
+        }
+        
+        /* Hero Section - Skills Page */
+        .skills-hero {
+            margin-top: 100px;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), 
+                        url('Images/banner1.jpg') center/cover no-repeat;
+            color: white;
+            padding: 0 5%;
+            
+        }
+        
+        .skills-hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeIn 1s ease;
+        }
+        
+        .skills-hero-content p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeIn 1.5s ease;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.5rem;
+            animation: fadeIn 2s ease;
+        }
+        
+        .breadcrumb a {
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .breadcrumb span {
+            margin: 0 10px;
+        }
+        
+        /* Skills Categories Section */
+        .skills-categories {
+            padding: 5rem 5%;
+            background-color: white;
+        }
+        
+        .skills-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h1 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+        
+        .section-title p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-light);
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .category-card {
+            background-color: var(--light-color);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(7, 121, 214, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: var(--primary-color);
+            font-size: 2rem;
+        }
+        
+        .category-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
+        .category-desc {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+        
+        .category-btn {
+            display: inline-block;
+            padding: 0.6rem 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        
+        .category-btn:hover {
+            background-color: var(--dark-color);
+        }
+        
+        /* Technical Skills Section */
+        .technical-skills {
+            padding: 5rem 5%;
+            background-color: var(--light-color);
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .skill-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .skill-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(7, 121, 214, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+        
+        .skill-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .skill-level {
+            width: 100%;
+            height: 8px;
+            background-color: #eee;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background-color: var(--primary-color);
+            border-radius: 4px;
+            width: 0;
+            transition: width 1.5s ease;
+        }
+        
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        /* Tools & Technologies Section */
+        .tools-section {
+            padding: 5rem 5%;
+            background-color: white;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            justify-items: center;
+        }
+        
+        .tool-item {
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .tool-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .tool-img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+            transition: var(--transition);
+        }
+        
+        .tool-item:hover .tool-img {
+            opacity: 0.7;
+        }
+        
+        .tool-name {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+        
+        .tool-item:hover .tool-name {
+            color: var(--primary-color);
+        }
+        
+        /* Process Section */
+        .process-section {
+            padding: 5rem 5%;
+            background-color: var(--light-color);
+        }
+        
+        .process-steps {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .process-step {
+            display: flex;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .process-step:last-child {
+            margin-bottom: 0;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-right: 2rem;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .step-content {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            flex-grow: 1;
+        }
+        
+        .step-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+        }
+        
+        .step-desc {
+            color: var(--text-light);
+        }
+        
+        .process-line {
+            position: absolute;
+            top: 0;
+            left: 30px;
+            width: 2px;
+            height: 100%;
+            background-color: var(--primary-color);
+            z-index: 0;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 5%;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            text-align: center;
+            color: white;
+        }
+        
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-container h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-container p {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            padding: 0.8rem 2.5rem;
+            background-color: white;
+            color: var(--primary-color);
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 2rem 5%;
+            text-align: center;
+        }
+        
+        .footer p {
+            margin-bottom: 1rem;
+        }
+        
+        .footer a {
+            color: var(--primary-color);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Floating Buttons */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            transition: var(--transition);
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+        
+        .whatsapp-icon {
+            width: 30px;
+            height: 30px;
+        }
+        
+        .scrollTopBtn {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+        
+        .scrollTopBtn.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scrollTopBtn:hover {
+            background-color: var(--dark-color);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideInLeft {
+            from { 
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .skills-hero-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            .process-step {
+                flex-direction: column;
+            }
+            
+            .step-number {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+            
+            .process-line {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            #menu-bar {
+                display: block;
+            }
+            
+            .menu {
+                display: none;
+            }
+            
+            .skills-hero {
+                height: 50vh;
+                margin-top: 100px;
+            }
+            
+            .skills-hero-content h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .skills-hero {
+                height: 40vh;
+            }
+            
+            .skills-hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .skills-hero-content p {
+                font-size: 1rem;
+            }
+            
+            .section-title h1 {
+                font-size: 2rem;
+            }
+            
+            .cta-container h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header" id="header">
+        <div class="nav-container">
+            <div class="left-section">
+                <i id="menu-bar" class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+                <div class="logo">
+                    <a href="index.html"><img src="Images/Logo-2.png" alt="Faizur Rahman Logo"></a>
+                </div>
+            </div>
+            <nav class="menu" id="menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html"><span>Skills</span></a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact-us.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-content">
+            <i class="fa-solid fa-times" onclick="toggleMenu()"></i>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html"><span>Skills</span></a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact-us.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="skills-hero">
+        <div class="skills-hero-content" data-aos="fade-up">
+            <h1>My Skills</h1>
+            <p>Technical expertise and professional capabilities I bring to every project</p>
+            <div class="breadcrumb" data-aos="fade-up" data-aos-delay="300">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <a href="skills.html">Skills</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Categories Section -->
+    <section class="skills-categories">
+        <div class="skills-container">
+            <div class="section-title" data-aos="fade-up">
+                <h1>Skills Overview</h1>
+                <p>I've developed a diverse skill set through academic training and professional experience</p>
+            </div>
+            
+            <div class="categories-grid">
+                <div class="category-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="category-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="category-title">Frontend Development</h3>
+                    <p class="category-desc">Building responsive, interactive user interfaces with modern frameworks and best practices</p>
+                    <a href="#frontend-skills" class="category-btn">View Skills</a>
+                </div>
+                
+                <div class="category-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="category-icon">
+                        <i class="fab fa-wordpress"></i>
+                    </div>
+                    <h3 class="category-title">WordPress Development</h3>
+                    <p class="category-desc">Creating custom themes, plugins, and responsive, user-friendly, optimized WordPress websites.</p>
+                    <a href="#!" class="category-btn">View Skills</a>
+                </div>
+                
+                <div class="category-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="category-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="category-title">UI/UX Design</h3>
+                    <p class="category-desc">Designing intuitive user experiences with attention to aesthetics and functionality</p>
+                    <a href="#design-skills" class="category-btn">View Skills</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Skills Section -->
+    <section class="technical-skills" id="frontend-skills">
+        <div class="skills-container">
+            <div class="section-title" data-aos="fade-up">
+                <h1>Technical Skills</h1>
+                <p>My proficiency levels across various technologies and frameworks</p>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-card" data-aos="fade-up">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <div class="skill-name">HTML5</div>
+                    </div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 95%"></div>
+                    </div>
+                    <div class="skill-info">
+                        <span>Advanced</span>
+                        <span>95%</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+                        <div class="skill-name">CSS3</div>
+                    </div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                    <div class="skill-info">
+                        <span>Advanced</span>
+                        <span>90%</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fab fa-js"></i>
+                        </div>
+                        <div class="skill-name">JavaScript</div>
+                    </div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 80%"></div>
+                    </div>
+                    <div class="skill-info">
+                        <span>Advanced</span>
+                        <span>80%</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card" data-aos="fade-up" id="backend-skills">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fab fa-php"></i>
+                        </div>
+                        <div class="skill-name">PHP</div>
+                    </div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 75%"></div>
+                    </div>
+                    <div class="skill-info">
+                        <span>Intermediate</span>
+                        <span>75%</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fab fa-wordpress"></i>
+                        </div>
+                        <div class="skill-name">WordPress</div>
+                    </div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                    <div class="skill-info">
+                        <span>Advanced</span>
+                        <span>85%</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="skill-name">MySQL</div>
+                    </div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 70%"></div>
+                    </div>
+                    <div class="skill-info">
+                        <span>Intermediate</span>
+                        <span>70%</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card" data-aos="fade-up" id="design-skills">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <div class="skill-name">UI/UX Design</div>
+                    </div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 75%"></div>
+                    </div>
+                    <div class="skill-info">
+                        <span>Intermediate</span>
+                        <span>75%</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="skill-name">SEO</div>
+                    </div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 80%"></div>
+                    </div>
+                    <div class="skill-info">
+                        <span>Advanced</span>
+                        <span>80%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools & Technologies Section -->
+   <section class="tools-section">
+        <div class="skills-container">
+            <div class="section-title" data-aos="fade-up">
+                <h1>Tools & Technologies</h1>
+                <p>Technologies and tools I work with regularly</p>
+            </div>
+            
+            <div class="tools-grid">
+                <div class="tool-item" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/WordPress_blue_logo.svg" alt="WordPress" class="tool-img">
+                    <div class="tool-name">WordPress</div>
+                </div>
+                
+                <div class="tool-item" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg" alt="Git" class="tool-img">
+                    <div class="tool-name">Git</div>
+                </div>
+                
+                <div class="tool-item" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://cdn.worldvectorlogo.com/logos/canva-1.svg" alt="Canva" class="tool-img">
+                    <div class="tool-name">Canva</div>
+                </div>
+                
+                <div class="tool-item" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt="Figma" class="tool-img">
+                    <div class="tool-name">Figma</div>
+                </div>
+                
+                <div class="tool-item" data-aos="fade-up">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg" alt="Photoshop" class="tool-img">
+                    <div class="tool-name">Photoshop</div>
+                </div>
+                
+                
+                <div class="tool-item" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" class="tool-img">
+                    <div class="tool-name">GitHub</div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="skills-container">
+            <div class="section-title" data-aos="fade-up">
+                <h1>My Development Process</h1>
+                <p>Structured approach to delivering high-quality web solutions</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-line"></div>
+                
+                <div class="process-step" data-aos="fade-up">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Requirement Analysis</h3>
+                        <p class="step-desc">Understanding client needs, target audience, and project objectives through detailed discussions and research.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Planning & Wireframing</h3>
+                        <p class="step-desc">Creating sitemaps, user flows, and wireframes to establish the project structure and user experience.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 class="step-title">UI/UX Design</h3>
+                        <p class="step-desc">Developing visual designs that align with brand identity while ensuring optimal usability and accessibility.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Development</h3>
+                        <p class="step-desc">Building responsive, interactive websites using clean, maintainable code with modern technologies.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step" data-aos="fade-up" data-aos-delay="400">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Testing & Optimization</h3>
+                        <p class="step-desc">Rigorous testing across devices and browsers, followed by performance optimization and SEO implementation.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step" data-aos="fade-up" data-aos-delay="500">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Deployment & Maintenance</h3>
+                        <p class="step-desc">Launching the website and providing ongoing support, updates, and maintenance as needed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" data-aos="fade-up">
+        <div class="cta-container">
+            <h2>Ready to Build Something Amazing?</h2>
+            <p>Let's discuss how my skills and expertise can help bring your project to life.</p>
+            <a href="contact-us.html" class="cta-btn">Start a Project</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 - Faizur Rahman | All Rights Reserved</p>
+        <p>Developed with <i class="fas fa-heart" style="color: #e74c3c;"></i> by <a href="#">Faizur Rahman</a></p>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <a href="https://wa.me/7379906479" target="_blank" class="whatsapp-float">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+    </a>
+    
+    <button id="scrollTopBtn" class="scrollTopBtn">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('open');
+        }
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.sidebar-content ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('sidebar').classList.remove('open');
+            });
+        });
+        
+        // Scroll to Top Button
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('active');
+                document.getElementById('header').classList.add('scrolled');
+            } else {
+                scrollTopBtn.classList.remove('active');
+                document.getElementById('header').classList.remove('scrolled');
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Animated counter for stats
+        function animateCounters() {
+            const projectsCount = document.getElementById('projects-count');
+            const experienceCount = document.getElementById('experience-count');
+            const clientsCount = document.getElementById('clients-count');
+            const certificatesCount = document.getElementById('certificates-count');
+            
+            const targetProjects = 15;
+            const targetExperience = 3;
+            const targetClients = 12;
+            const targetCertificates = 5;
+            
+            let currentProjects = 0;
+            let currentExperience = 0;
+            let currentClients = 0;
+            let currentCertificates = 0;
+            
+            const speed = 200; // Lower is faster
+            
+            const projectsInterval = setInterval(() => {
+                currentProjects++;
+                projectsCount.textContent = currentProjects;
+                if (currentProjects >= targetProjects) clearInterval(projectsInterval);
+            }, speed);
+            
+            const experienceInterval = setInterval(() => {
+                currentExperience += 0.1;
+                experienceCount.textContent = currentExperience.toFixed(1);
+                if (currentExperience >= targetExperience) clearInterval(experienceInterval);
+            }, speed);
+            
+            const clientsInterval = setInterval(() => {
+                currentClients++;
+                clientsCount.textContent = currentClients;
+                if (currentClients >= targetClients) clearInterval(clientsInterval);
+            }, speed);
+            
+            const certificatesInterval = setInterval(() => {
+                currentCertificates++;
+                certificatesCount.textContent = currentCertificates;
+                if (currentCertificates >= targetCertificates) clearInterval(certificatesInterval);
+            }, speed);
+        }
+        
+        // Intersection Observer for stats animation
+        const statsSection = document.querySelector('.stats-section');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        observer.observe(statsSection);
+    </script>
+</body>
+</html>

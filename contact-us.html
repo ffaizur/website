@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Faizur Rahman - Web Developer & Designer</title>
+    <meta name="description" content="Get in touch with Faizur Rahman for web development projects, collaborations, or inquiries">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="Images/Logo-2.png" type="image/x-icon">
+    
+    <!-- Fonts & Icons -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- CSS Stylesheet -->
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .left-section {
+            display: flex;
+            align-items: center;
+        }
+
+        #menu-bar {
+            font-size: 24px;
+            margin-right: 20px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .menu ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .menu ul li {
+            margin-left: 30px;
+            position: relative;
+        }
+
+        .menu ul li a {
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .menu ul li a:hover {
+            color: #6c63ff;
+        }
+
+        .menu ul li a span {
+            color: #6c63ff;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100%;
+            background-color: #fff;
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1001;
+            transition: right 0.3s ease;
+            overflow-y: auto;
+        }
+
+        .sidebar.open {
+            right: 0;
+        }
+
+        .sidebar-content {
+            padding: 30px;
+        }
+
+        .sidebar-content i {
+            font-size: 24px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            margin-top: 40px;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul li a {
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .sidebar ul li a:hover {
+            color: #6c63ff;
+        }
+
+        /* Contact Page Hero */
+        .contact-hero {
+            margin-top: 100px;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), 
+                        url('Images/banner1.jpg') center/cover no-repeat;
+            color: white;
+            padding: 0 5%;
+        }
+        
+        .contact-hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeIn 1s ease;
+        }
+        
+        .contact-hero-content p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeIn 1.5s ease;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.5rem;
+            animation: fadeIn 2s ease;
+        }
+        
+        .breadcrumb a {
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .breadcrumb span {
+            margin: 0 10px;
+        }
+
+        /* Contact Main Section */
+        .contact-main {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 5%;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .contact-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            background: #f0f0ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: #6c63ff;
+            font-size: 24px;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .contact-card p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .contact-card a {
+            color: #6c63ff;
+            font-weight: 500;
+            display: inline-block;
+            transition: color 0.3s;
+        }
+
+        .contact-card a:hover {
+            color: #4a42e8;
+        }
+
+        /* Contact Form Section */
+        .contact-form-section {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-top: 50px;
+        }
+
+        .contact-form-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #555;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #6c63ff;
+            outline: none;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: #6c63ff;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s;
+            display: block;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: #4a42e8;
+        }
+
+        .form-message {
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .form-message.success {
+            background: #e6f7ee;
+            color: #28a745;
+            border: 1px solid #b1dfc2;
+        }
+
+        .form-message.error {
+            background: #fde8e8;
+            color: #dc3545;
+            border: 1px solid #f5c6cb;
+        }
+
+        /* Map Section */
+        .map-section {
+            margin-top: 50px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .map-section iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2a2a2a;
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 80px;
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            color: #6c63ff;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: #fff;
+        }
+
+        .footer i.fa-heart {
+            margin: 0 5px;
+        }
+
+        /* Floating Buttons */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-icon {
+            width: 35px;
+            height: 35px;
+        }
+
+        .scrollTopBtn {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #6c63ff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 999;
+        }
+
+        .scrollTopBtn.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scrollTopBtn:hover {
+            background: #4a42e8;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .menu ul li {
+                margin-left: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #menu-bar {
+                display: block;
+            }
+
+            .menu {
+                display: none;
+            }
+
+            .contact-hero h1 {
+                font-size: 2rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form-section {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .nav-container {
+                padding: 15px;
+            }
+
+            .contact-hero {
+                height: 50vh;
+                margin-top: 100px;
+            }
+
+            .contact-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .whatsapp-icon {
+                width: 28px;
+                height: 28px;
+            }
+
+            .scrollTopBtn {
+                width: 40px;
+                height: 40px;
+                bottom: 80px;
+                right: 20px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header" id="header">
+        <div class="nav-container">
+            <div class="left-section">
+                <i id="menu-bar" class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+                <div class="logo">
+                    <a href="index.html"><img src="Images/Logo-2.png" alt="Faizur Rahman Logo"></a>
+                </div>
+            </div>
+            <nav class="menu" id="menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact-us.html"><span>Contact</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-content">
+            <i class="fa-solid fa-times" onclick="toggleMenu()"></i>
+            <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact-us.html"><span>Contact</span></a></li>
+            </ul>
+        </div>
+    </div>
+
+
+     <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="contact-hero-content" data-aos="fade-up">
+            <h1>Contact Us</h1>
+            <p>Have a project in mind or want to discuss potential opportunities? I'd love to hear from you!</p>
+            <div class="breadcrumb" data-aos="fade-up" data-aos-delay="300">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Main Section -->
+    <div class="contact-main">
+        <div class="contact-grid">
+            <!-- Contact Card 1 -->
+            <div class="contact-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="contact-icon">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <h3>Call Me</h3>
+                <p>Available for freelance work and full-time opportunities</p>
+                <a href="tel:+917379906479">+91 7379906479</a>
+            </div>
+
+            <!-- Contact Card 2 -->
+            <div class="contact-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>Email Me</h3>
+                <p>Send me your questions or project details</p>
+                <a href="mailto:faizur982@gmail.com">faizur982@gmail.com</a>
+            </div>
+
+            <!-- Contact Card 3 -->
+            <div class="contact-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>Visit Me</h3>
+                <p>Based in Gorakhpur, Uttar Pradesh</p>
+                <a href="https://maps.app.goo.gl/" target="_blank">Gorakhnath, Gorakhpur UP - 273015</a>
+            </div>
+        </div>
+<div class="map-contact">
+
+
+
+        <!-- Contact Form Section -->
+        <div class="contact-form-section" data-aos="fade-up">
+            <h2>Send Me a Message</h2>
+            <form action="message.php" method="POST" name="contact" netlify>
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <select id="subject" name="subject" required>
+                        <option value="" disabled selected>Select a subject</option>
+                        <option value="web-development">Web Development Project</option>
+                        <option value="wordpress">WordPress Website</option>
+                        <option value="ecommerce">E-Commerce Solution</option>
+                        <option value="seo">SEO Services</option>
+                        <option value="other">Other Inquiry</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+
+ </div>
+    </div>
+
+           <!-- Map Section -->
+        <div class="map-section" data-aos="fade-up">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3561.789109075022!2d83.36712331504297!3d26.76087608318725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3991446a0c332489%3A0x5b5dee9b4e0a4a6d!2sGorakhnath%20Temple!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 - Faizur Rahman | All Rights Reserved</p>
+        <p>Developed with <i class="fas fa-heart" style="color: #e74c3c;"></i> by <a href="#">Faizur Rahman</a></p>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <a href="https://wa.me/7379906479" target="_blank" class="whatsapp-float">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+    </a>
+    
+    <button id="scrollTopBtn" class="scrollTopBtn">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('open');
+        }
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.sidebar-content ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('sidebar').classList.remove('open');
+            });
+        });
+        
+        // Scroll to Top Button
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('active');
+                document.getElementById('header').classList.add('scrolled');
+            } else {
+                scrollTopBtn.classList.remove('active');
+                document.getElementById('header').classList.remove('scrolled');
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Form Submission Handling
+        document.querySelector('.contact-form-section form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const submitBtn = form.querySelector('.submit-btn');
+            const originalBtnText = submitBtn.textContent;
+            
+            // Create message element if it doesn't exist
+            let messageElement = form.querySelector('.form-message');
+            if (!messageElement) {
+                messageElement = document.createElement('div');
+                messageElement.className = 'form-message';
+                form.insertBefore(messageElement, submitBtn);
+            }
+            
+            // Show loading state
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            messageElement.textContent = '';
+            messageElement.style.display = 'none';
+            
+            // Simulate form submission (replace with actual AJAX call)
+            setTimeout(() => {
+                // This is just for demo - replace with actual form submission
+                messageElement.textContent = 'Your message has been sent successfully! I will get back to you soon.';
+                messageElement.style.display = 'block';
+                messageElement.className = 'form-message success';
+                form.reset();
+                
+                submitBtn.textContent = originalBtnText;
+                submitBtn.disabled = false;
+            }, 1500);
+            
+            // In a real implementation, you would use fetch() to submit the form
+            /*
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                messageElement.textContent = data.message;
+                messageElement.style.display = 'block';
+                messageElement.className = 'form-message ' + (data.success ? 'success' : 'error');
+                
+                if (data.success) {
+                    form.reset();
+                }
+            })
+            .catch(error => {
+                messageElement.textContent = 'An error occurred. Please try again later.';
+                messageElement.style.display = 'block';
+                messageElement.className = 'form-message error';
+            })
+            .finally(() => {
+                submitBtn.textContent = originalBtnText;
+                submitBtn.disabled = false;
+            });
+            */
+        });
+    </script>
+</body>
+</html>

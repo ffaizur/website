@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faizur Rahman | My Projects</title>
+    <meta name="description" content="View portfolio projects of Faizur Rahman, Web Developer with MCA degree and industry experience">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="Images/Logo-2.png" type="image/x-icon">
+    
+    <!-- Fonts & Icons -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- CSS Stylesheet -->
+    <style>
+:root {
+    --primary-color: #0779d6;
+    --secondary-color: #4ce4fb;
+    --accent-color: #e67e22;
+    --light-color: #f5f6fa;
+    --dark-color: #2f3640;        
+    --text-color: #2d3436;         
+    --text-light: #636e72;         
+    --success-color: #27ae60;      
+    --error-color: #e74c3c;        
+    --transition: all 0.3s ease;
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); 
+    --border-radius: 8px;
+}
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: #f9f9f9;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        /* Header & Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+        
+        .header.scrolled {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .left-section {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 60px;
+            transition: var(--transition);
+        }
+        
+        #menu-bar {
+            font-size: 1.5rem;
+            margin-right: 1.5rem;
+            cursor: pointer;
+            display: none;
+        }
+        
+        .menu ul {
+            display: flex;
+        }
+        
+        .menu ul li {
+            margin-left: 2rem;
+            position: relative;
+        }
+        
+        .menu ul li a {
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+        }
+        
+        .menu ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .menu ul li a span {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .menu ul li::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .menu ul li:hover::after {
+            width: 100%;
+        }
+        
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100%;
+            background-color: white;
+            z-index: 1001;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            overflow-y: auto;
+        }
+        
+        .sidebar.open {
+            right: 0;
+        }
+        
+        .sidebar-content {
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .sidebar-content i {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+        
+        .sidebar-content ul li {
+            margin-bottom: 1.5rem;
+        }
+        
+        .sidebar-content ul li a {
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .sidebar-content ul li a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+        
+        .sidebar-content ul li a span {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section - Projects Page */
+        .projects-hero {
+            margin-top: 100px;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), 
+                        url('Images/banner1.jpg') center/cover no-repeat;
+            color: white;
+            padding: 0 5%;
+            
+        }
+        
+        .projects-hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeIn 1s ease;
+        }
+        
+        .projects-hero-content p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeIn 1.5s ease;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.5rem;
+            animation: fadeIn 2s ease;
+        }
+        
+        .breadcrumb a {
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .breadcrumb span {
+            margin: 0 10px;
+        }
+        
+        /* Projects Section */
+        .projects-section {
+            padding: 5rem 5%;
+            background-color: white;
+        }
+        
+        .projects-section h1 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+        }
+
+        .projects-description {
+            text-align: center;
+            margin-bottom: 3.5rem;
+            font-size: 1.05rem;
+            color: var(--text-light);
+        }
+
+        .projects-description a {
+            color: var(--primary-color);
+            font-style: italic;
+        }
+
+        .projects-description a:hover {
+            color: var(--success-color);
+            font-style: normal;
+        }
+        
+        /* Project Tabs Styles */
+        .project-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 50px;
+        }
+
+        .tab-btn {
+            padding: 10px 20px;
+            background-color: var(--light-color);
+            color: var(--text-color);
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            box-shadow: var(--box-shadow);
+            font-size: .82rem;
+        }
+
+        .tab-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .tab-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Projects Container */
+        .projects-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .project-card:hover .project-img img {
+            transform: scale(1.1);
+        }
+        
+        .project-details {
+            padding: 1.5rem;
+            background-color: white;
+        }
+        
+        .project-details h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+        }
+        
+        .project-details p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .project-details a {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        
+        .project-details a:hover {
+            background-color: var(--dark-color);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 2rem 5%;
+            text-align: center;
+        }
+        
+        .footer p {
+            margin-bottom: 1rem;
+        }
+        
+        .footer a {
+            color: var(--primary-color);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Floating Buttons */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            transition: var(--transition);
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+        
+        .whatsapp-icon {
+            width: 30px;
+            height: 30px;
+        }
+        
+        .scrollTopBtn {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+        
+        .scrollTopBtn.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scrollTopBtn:hover {
+            background-color: var(--dark-color);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .projects-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            #menu-bar {
+                display: block;
+            }
+            
+            .menu {
+                display: none;
+            }
+            
+            .projects-hero-content {
+                padding: 100px 5% 40px;
+            }
+            
+            .projects-hero-content h1 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+            .projects-hero{
+                height: 50vh;
+                margin-top: 100px;
+            }
+            
+            .project-tabs {
+                gap: 5px;
+            }
+            
+            .tab-btn {
+                padding: 8px 12px;
+                font-size: 14px;
+            }
+            
+            .projects-hero-content h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header" id="header">
+        <div class="nav-container">
+            <div class="left-section">
+                <i id="menu-bar" class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+                <div class="logo">
+                    <a href="index.html"><img src="Images/Logo-2.png" alt="Faizur Rahman Logo"></a>
+                </div>
+            </div>
+            <nav class="menu" id="menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="projects.html"><span>Projects</span></a></li>
+                    <li><a href="contact-us.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-content">
+            <i class="fa-solid fa-times" onclick="toggleMenu()"></i>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html"><span>Projects</span></a></li>
+                <li><a href="contact-us.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+     <!-- Hero Section -->
+    <section class="projects-hero">
+        <div class="projects-hero-content" data-aos="fade-up">
+            <h1>My Projects</h1>
+            <p>Showcasing my best work and creative solutions</p>
+            <div class="breadcrumb" data-aos="fade-up" data-aos-delay="300">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <a href="projects.html">Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section">
+        
+        <!-- Project Filter Tabs -->
+        <div class="project-tabs" data-aos="fade-up">
+            <button class="tab-btn" data-filter="all">View All</button>
+            <button class="tab-btn" data-filter="portal">Portal</button>
+            <button class="tab-btn" data-filter="website">Website</button>
+            <button class="tab-btn" data-filter="ecommerce">E-Commerce</button>
+        </div>
+        
+        <div class="projects-container">
+            <!-- portal project -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100" data-category="portal">
+                <div class="project-img">
+                    <img src="Images/portal.png" alt="NGO Portal">
+                </div>
+                <div class="project-details">
+                    <h3>NGO Portal</h3>
+                    <p>A dedicated platform for volunteers, donors, and social workers to collaborate, manage projects, and track impact.</p>
+                    <a href="https://khadairint.com/login/login.php" target="_blank">View Project</a>
+                </div>
+            </div>
+
+            <!-- Project 1 -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100" data-category="website">
+                <div class="project-img">
+                    <img src="Images/easterzone-img.png" alt="Eastern Zone Company LLC">
+                </div>
+                <div class="project-details">
+                    <h3>Eastern Zone Company LLC</h3>
+                    <p>Industrial fabrication website highlighting services, achievements, and operational excellence.</p>
+                    <a href="https://easternzone.com.sa/" target="_blank">View Project</a>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200" data-category="website">
+                <div class="project-img">
+                    <img src="Images/maulanaazad-img.png" alt="Maulana Azad HS School">
+                </div>
+                <div class="project-details">
+                    <h3>Maulana Azad HS School</h3>
+                    <p>Offers quality education with modern facilities, focusing on academics, extracurriculars, and overall development.</p>
+                    <a href="https://maulanaazadschool.com/" target="_blank">View Project</a>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="300" data-category="website">
+                <div class="project-img">
+                    <img src="Images/Royerainfra-img.png" alt="Royera Infra Developers">
+                </div>
+                <div class="project-details">
+                    <h3>Royera Infra Tech</h3>
+                    <p>Provides civil, electrical, plumbing, and interior-exterior solutions for residential, commercial, and industrial projects.</p>
+                    <a href="https://royerainfra.com/" target="_blank">View Project</a>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100" data-category="website">
+                <div class="project-img">
+                    <img src="Images/NSCinfra-img.png" alt="NSC Infratech">
+                </div>
+                <div class="project-details">
+                    <h3>NSC Infratech</h3>
+                    <p>Provides mechanical fabrication, structural erection, piping, civil works, and manpower supply for industrial projects.</p>
+                    <a href="https://nscinfratech.com/" target="_blank">View Project</a>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200" data-category="website">
+                <div class="project-img">
+                    <img src="Images/khadairint-img.png" alt="Kudair International">
+                </div>
+                <div class="project-details">
+                    <h3>Kudair International</h3>
+                    <p>Offers comprehensive IT services including managed services, cybersecurity, and software development for diverse industries.</p>
+                    <a href="https://khadairint.com/" target="_blank">View Project</a>
+                </div>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200" data-category="website">
+                <div class="project-img">
+                    <img src="Images/jsischool.png" alt="JS International School">
+                </div>
+                <div class="project-details">
+                    <h3>JS International School</h3>
+                    <p>A CBSE-affiliated institution fostering academic excellence, sports, and values for holistic student development.</p>
+                    <a href="https://jsinternationalschool.co.in/" target="_blank">View Project</a>
+                </div>
+            </div>
+
+            <!-- Project 7 -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200" data-category="website">
+                <div class="project-img">
+                    <img src="Images/macinfotech.png" alt="Mac Infotech">
+                </div>
+                <div class="project-details">
+                    <h3>Mac Infotech</h3>
+                    <p>Mac Infotech provides CCTV camera installation, surveillance systems, and security solutions for homes and businesses.</p>
+                    <a href="https://jsinternationalschool.co.in/" target="_blank">View Project</a>
+                </div>
+            </div>
+
+            <!-- Project 8 -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200" data-category="website">
+                <div class="project-img">
+                    <img src="Images/Lincoln-school.png" alt="Lincoln School">
+                </div>
+                <div class="project-details">
+                    <h3>Lincoln School</h3>
+                    <p>Lincoln School offers quality CBSE education, focusing on academics, creativity, values, and all-round development.</p>
+                    <a href="https://jsinternationalschool.co.in/" target="_blank">View Project</a>
+                </div>
+            </div>
+
+            <!-- Project 9 -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200" data-category="website">
+                <div class="project-img">
+                    <img src="Images/shashi-anand-travels.png" alt="Shashi Anand Travels">
+                </div>
+                <div class="project-details">
+                    <h3>Shashi Anand Travels</h3>
+                    <p>Shashi Anand Travels offers reliable car rentals, tempo travellers, and group tours in Prayagraj, Gorakhpur.</p>
+                    <a href="https://jsinternationalschool.co.in/" target="_blank">View Project</a>
+                </div>
+            </div>
+
+            <!-- Ecommerce project -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="300" data-category="ecommerce">
+                <div class="project-img">
+                    <img src="Images/comin-soon.jpg" alt="Chocolates Store">
+                </div>
+                <div class="project-details">
+                    <h3>Chocolates Store</h3>
+                    <p>Offers premium Italian chocolates, elegant gift boxes, and customized arrangements for special occasions in Kuwait.</p>
+                    <a href="#" target="_blank">Coming Soon</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 - Faizur Rahman | All Rights Reserved</p>
+        <p>Developed with <i class="fas fa-heart" style="color: #e74c3c;"></i> by <a href="#">Faizur Rahman</a></p>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <a href="https://wa.me/7379906479" target="_blank" class="whatsapp-float">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+    </a>
+    
+    <button id="scrollTopBtn" class="scrollTopBtn">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('open');
+        }
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.sidebar-content ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('sidebar').classList.remove('open');
+            });
+        });
+        
+        // Scroll to Top Button
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('active');
+                document.getElementById('header').classList.add('scrolled');
+            } else {
+                scrollTopBtn.classList.remove('active');
+                document.getElementById('header').classList.remove('scrolled');
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Project Filtering
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            // Set first tab as active by default
+            tabButtons[0].classList.add('active');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    
+                    if (filter === 'all') {
+                        // Show all projects
+                        projectCards.forEach(card => {
+                            card.style.display = 'block';
+                        });
+                    } else {
+                        // Filter projects
+                        projectCards.forEach(card => {
+                            if (card.getAttribute('data-category') === filter) {
+                                card.style.display = 'block';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
